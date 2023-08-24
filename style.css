@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background: url(./bg.png);
+    background-position: 0%;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .bg {
+    position: absolute;
+  }
+  * {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .container {
+    background-color: #b48e7b;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 40%;
+    border: 1px solid rgb(167, 167, 167);
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    color: #ebdacc;
+  }
+
+  input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+  }
+  button {
+    background-color: #7b372e;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  button.remove-button {
+    background-color: #7b372e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button.remove-button:hover {
+    background-color: #c82333;
+  }
+
+.container > header {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.container > header > i {
+    font-size: 3rem;
+    color: #ebdacc;
+}
+
+input{
+    padding: .5rem;
+    width: 96.8%;
+    transition: .33s;
+    outline: none;
+    font-size: 1.3rem;
+}
+
+option {
+    font-size: 1.3rem;
+}
+select {
+    font-size: 1.3rem;
+}
+input:focus {
+    width: 100%;
+    transform: translateX(-1.5%);
+}

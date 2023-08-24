@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Book List - home</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+  <div class="container">
+    <header>
+      <i class="bi bi-book"></i>
+      <h1>Book List</h1>
+    </header>
+    <div class="container-inputs">
+      <input type="text" id="bookInput" placeholder="Enter a book title">
+      <input type="text" id="authorInput" placeholder="Enter the author">
+    </div>
+    <select id="genreSelect">
+      <option value="">Select a genre</option>
+      <option value="Fantasy">Fantasy</option>
+      <option value="Mystery">Mystery</option>
+      <option value="Science Fiction">Science Fiction</option>
+      <option value="Romance">Romance</option>
+      <option value="Non-fiction">Non-fiction</option>
+      <option value="Other">Other</option>
+    </select>
+    <button onclick="addBook()">Add Book</button>
+    <ul id="bookList"></ul>
+  </div>
+
+  <script>
+    const book_automatic = 0;
+    const bookInput = document.getElementById('bookInput');
+    const authorInput = document.getElementById('authorInput');
+    const genreSelect = document.getElementById('genreSelect');
+    const bookList = document.getElementById('bookList');
+    const books = [];
+
+    // Gerar 100 livros fictícios automaticamente
+    for (let i = 1; i <= book_automatic; i++) {
+      books.push({ title: `Book ${i}`, author: `Author ${i}`, genre: 'Fiction' });
+    }
+
+    function addBook() {
+      const bookTitle = bookInput.value.trim();
+      const bookAuthor = authorInput.value.trim();
+      const bookGenre = genreSelect.value;
+      if (bookTitle !== '' && bookAuthor !== '' && bookGenre !== '') {
+        books.push({ title: bookTitle, author: bookAuthor, genre: bookGenre });
+        updateBookList();
+        bookInput.value = '';
+        authorInput.value = '';
+        genreSelect.value = '';
+      }
+    }
+
+    function removeBook(index) {
+      books.splice(index, 1);
+      updateBookList();
+    }
+
+    function updateBookList() {
+      bookList.innerHTML = '';
+      books.forEach((book, index) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+          <span><strong>${book.title}</strong> by ${book.author} (${book.genre})</span>
+          <button class="remove-button" onclick="removeBook(${index})">Remove</button>
+        `;
+        bookList.appendChild(listItem);
+      });
+    }
+
+    // Atualizar a lista de livros inicialmente
+    updateBookList();
+  </script>
+</body>
+</html>
