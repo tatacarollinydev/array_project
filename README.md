@@ -10,7 +10,7 @@
 - Html
 - CSS
 - JavaScipt
-- Figma
+- figma
 #
 
 ## **Tela Inicial**
